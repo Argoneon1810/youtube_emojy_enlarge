@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      width: 160px;
+      padding: 12px;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    h3 {
+      margin: 0;
+      font-size: 13px;
+      color: #0f0f0f;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      transition: background 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>이모지 탭 크기</h3>
+    <button id="toggleBtn">기본 모드 (OFF)</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
