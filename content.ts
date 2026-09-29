@@ -1,5 +1,5 @@
-const styleId = "yt-custom-emoji-resizer-style";
-let styleEl = document.getElementById(styleId);
+const styleId: string = "yt-custom-emoji-resizer-style";
+let styleEl: HTMLStyleElement | null = document.getElementById(styleId) as HTMLStyleElement | null;
 
 if (!styleEl) {
   styleEl = document.createElement("style");
@@ -14,9 +14,9 @@ if (!styleEl) {
 }
 
 // 스타일 적용/해제 함수
-function toggleStyle(enabled) {
+function toggleStyle(enabled: boolean): void {
   if (enabled) {
-    if (!document.getElementById(styleId)) {
+    if (!document.getElementById(styleId) && styleEl) {
       document.head.appendChild(styleEl);
     }
   } else {
@@ -26,14 +26,14 @@ function toggleStyle(enabled) {
 }
 
 // 저장된 설정 로드 (기본값은 OFF)
-chrome.storage.local.get(["emojiExpanded"], (result) => {
+chrome.storage.local.get(["emojiExpanded"], (result: { emojiExpanded?: boolean }) => {
   toggleStyle(!!result.emojiExpanded);
 });
 
 // 팝업 GUI에서 보내는 토글 신호 대기
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request: { action?: string; enabled?: boolean }, _sender: chrome.runtime.MessageSender, sendResponse: (response: { success: boolean }) => void) => {
   if (request.action === "toggleEmoji") {
-    toggleStyle(request.enabled);
+    toggleStyle(!!request.enabled);
     sendResponse({ success: true });
   }
 });

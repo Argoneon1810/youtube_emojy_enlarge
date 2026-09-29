@@ -1,0 +1,13 @@
+{
+  "name": "youtube-emoji-enlarge",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc && cp manifest.json popup.html dist/",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/chrome": "^0.0.268"
+  }
+}
