@@ -32,12 +32,31 @@
       color: white;
       transition: background 0.2s;
     }
+    .slider-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .slider-container label {
+      font-size: 11px;
+      color: #606060;
+      text-align: center;
+    }
+    input[type="range"] {
+      width: 100%;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h3>이모지 탭 크기</h3>
     <button id="toggleBtn">기본 모드 (OFF)</button>
+    <div class="slider-container">
+      <label for="heightSlider">높이: <span id="heightValue">520</span>px</label>
+      <input type="range" id="heightSlider" min="200" max="880" value="520" step="10">
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
