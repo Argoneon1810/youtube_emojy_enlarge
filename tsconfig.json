@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "lib": ["ES2020", "DOM"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM"],
+    "types": ["chrome"],
     "strict": true,
-    "outDir": "./dist",
-    "declaration": false,
-    "sourceMap": false
+    "isolatedModules": true,
+    "noEmit": true,
+    "skipLibCheck": true
   },
-  "include": ["content.ts", "popup.ts"]
+  "include": ["src"]
 }
